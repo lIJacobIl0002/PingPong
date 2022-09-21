@@ -1,4 +1,4 @@
-local ball, square, player1, player2, isDown, speed, velocity_x, velocity_y, gameOver, lines, ai, ai_speed;
+local ball, square, player1, player2, isDown, speed, velocity_x, velocity_y, gameOver, lines;
 local maxWidth, maxHeight = love.window.getMode() --800, 600
 -- image = io.open("images/pingpong.jpg")
 -- print(image:read())
@@ -18,14 +18,10 @@ function love.load()
         end
     end
     love.window.setTitle("Ping Pong")
-    print(love.window.getTitle());
     isDown = love.keyboard.isDown;
 
     --[[ player speed ]]--
     speed = 4;
-
-    --[[ player 2 is a player or ai]]
-    ai = false;
 
     --[[ ball velocity ]] --
     velocity_x = -200
@@ -38,11 +34,6 @@ end
 function love.update(delta)
     if not love.window.hasFocus() then
         return;
-    end
-    if ai then
-        local middle = (player2.y + player2.maxY) / 2
-        player2.y = ball.x - middle * 2
-        print(player2.y, player2.x)
     end
 
     --[[ player movement ]]--
@@ -89,7 +80,6 @@ function love.update(delta)
             end;
             velocity_y = velocity_y + 20 * add
         end
-        print('bounce')
     end
 
     if (ball.x > maxWidth) then
