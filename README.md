@@ -1,4 +1,10 @@
 # PingPong
-A ping pong game i made in 4 hours. hard coded collision and physics. No sound affects because i couldn't be bothered lol. Used Love2D btw
+A Ping Pong game that has been made using LUA and Love2D. It contains 3 main files (main.lua, ball.lua, and square.lua)
 
-might be a bit buggy lol
+main.lua contains mostly everything
+ball.lua contains the ball class
+square.lua contains the player class
+
+This may be buggy as it has not been worked on for more than a day.
+
+Made by ~ Kenni
